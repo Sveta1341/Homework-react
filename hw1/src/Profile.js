@@ -1,4 +1,5 @@
 
+
 export const Profile = ({ name, tag, location, avatar, stats }) => {
 	return (
 		<>
