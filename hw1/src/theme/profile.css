@@ -1,0 +1,21 @@
+img.avatar {
+	width: 100px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+.profile {
+	border-radius: 20%;
+	border: 1px solid black;
+	width: 260px;
+	text-align: center;
+	height: 310px;
+}
+.name {
+	font-weight: 700;
+}
+.stats {
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}

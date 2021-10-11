@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types'
 import friends from './friends.json'
+import './FriendListStyle'
+import ViewItemStyle from './FriendListStyle'
 
-const ViewItem = (friends) => {
+
+
+export const ViewItem = (friends) => {
+	const styles = friends.isOnline ? 'green' : 'red'
+
 	return (
-		<li>
-			<span>{friends.isOnline}</span>
-			<span>{friends.name}</span>
-			<p>{friends.avatar}</p>
-		</li>
+		<div>
+			<span style={{ backgroundColor: styles }}></span>
+			<img src={friends.avatar} width="50px" />
+			<p>{friends.name}</p>
+		</div >
 	)
 }
+
+
 
 export const FriendList = ({ friends }) => {
 	const FriendListItem = friends.map(({ avatar, name, isOnline }) => <ViewItem name={name} isOnline={isOnline} avatar={avatar} />)

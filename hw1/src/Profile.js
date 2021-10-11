@@ -6,7 +6,7 @@ export const Profile = ({ name, tag, location, avatar, stats }) => {
 			<div class="profile">
 				<div class="description">
 					<img
-						src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
+						src={avatar}
 						alt="Аватар пользователя"
 						class="avatar"
 					/>

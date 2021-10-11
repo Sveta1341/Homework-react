@@ -4,6 +4,7 @@ import { Profile } from './Profile';
 import user from './user.json';
 import friends from './friends.json'
 import { FriendList } from './ListItem';
+import { ViewItemStyle } from './FriendListStyle'
 
 
 
@@ -17,11 +18,11 @@ function App() {
 				location={user.location}
 				avatar={user.avatar}
 				stats={user.stats} />
-			<FriendList
-				name={friends.name}
-				avatar={friends.avatar}
-				isOnline={friends.isOnline} />
-
+			<ViewItemStyle >
+				<FriendList
+					friends={friends}
+				/>
+			</ViewItemStyle>
 		</>
 	)
 }
