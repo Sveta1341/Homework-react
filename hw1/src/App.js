@@ -1,10 +1,10 @@
 import '../src/theme/App.css';
 import '../src/theme/profile.css';
-import { Profile } from './Profile';
+import { Profile } from './components/profile/Profile';
 import user from './user.json';
 import friends from './friends.json'
-import { FriendList } from './ListItem';
-import { ViewItemStyle } from './FriendListStyle'
+import { FriendList } from './components/frindlist/ListItem';
+import { ViewItemStyle } from './components/frindlist/FriendListStyle'
 
 
 
