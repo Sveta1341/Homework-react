@@ -5,9 +5,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 const validationSchema = yup.object({
-	name: yup
-		.string('Enter your name')
-		.required('Name is required'),
 	email: yup
 		.string('Enter your email')
 		.email('Enter a valid email')
@@ -18,13 +15,11 @@ const validationSchema = yup.object({
 		.required('Password is required'),
 });
 
-export const SignUpForm = () => {
+export const LoginForm = () => {
 	const formik = useFormik({
 		initialValues: {
-			name: '',
 			email: '',
 			password: '',
-
 		},
 		validationSchema: validationSchema,
 		onSubmit: (values) => {
@@ -35,16 +30,6 @@ export const SignUpForm = () => {
 	return (
 		<div>
 			<form onSubmit={formik.handleSubmit}>
-				<TextField
-					fullWidth
-					id="name"
-					name="name"
-					label="Name"
-					value={formik.values.name}
-					onChange={formik.handleChange}
-					error={formik.touched.name && Boolean(formik.errors.name)}
-					helperText={formik.touched.name && formik.errors.name}
-				/>
 				<TextField
 					fullWidth
 					id="email"
@@ -67,7 +52,7 @@ export const SignUpForm = () => {
 					helperText={formik.touched.password && formik.errors.password}
 				/>
 				<Button color="primary" variant="contained" fullWidth type="submit">
-					Sign
+					Login
 				</Button>
 			</form>
 		</div>

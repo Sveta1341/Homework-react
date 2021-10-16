@@ -1,49 +1,51 @@
 import { useState } from "react";
-import { SignUPwithUI } from './Components/SignForm/SignUpForm';
-import { WithMaterialUI } from './Components/LofinForm/LoginForm';
+import { SignUpForm } from './Components/SignForm/SignUpForm';
+import { LoginForm } from './Components/LoginForm/LoginForm';
 import './App.css'
+import { Tabs } from '@mui/material'
+import { Tab } from "@material-ui/core";
 
-function Tabs() {
-	const [toggleState, setToggleState] = useState(1);
+function TabsApp() {
+	const [value, setValue] = useState(0);
 
-	const toggleTab = (index) => {
-		setToggleState(index);
+	const handleChange = (value, newValue) => {
+		setValue(newValue);
 	};
 
-	return (
-		<div className="container">
-			<div className="bloc-tabs">
-				<button
-					className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-					onClick={() => toggleTab(1)}
-				>
-					Log in
-				</button>
-				<button
-					className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-					onClick={() => toggleTab(2)}
-				>
-					Sign up
-				</button>
-			</div>
+	const showLogInUIJsx = value === 0 && LoginForm
+	const showSignInUIJsx = value === 1 && SignUpForm
 
+
+	return (
+		<div className='container'>
+			<div className='bloc-tabs'>
+				<Tabs value={value} onChange={handleChange} centered>
+					<Tab label="Log in" />
+					<Tab label="Sign up" />
+					{showLogInUIJsx || showSignInUIJsx}
+				</Tabs >
+			</div>
 			<div className="content-tabs">
 				<div
-					className={toggleState === 1 ? "content  active-content" : "content"}
+					className={value === 0 ? "content  active-content" : "content"}
 				>
 					<h2>Login on w3iscool</h2>
-					<WithMaterialUI />
+					<LoginForm />
 				</div>
 
 				<div
-					className={toggleState === 2 ? "content  active-content" : "content"}
+					className={value === 1 ? "content  active-content" : "content"}
 				>
 					<h2>Sign up on w3iscool</h2>
-					<SignUPwithUI />
+					<SignUpForm />
 				</div>
 			</div>
-		</div>
-	);
+		</div >
+	)
 }
 
-export default Tabs;
+export default TabsApp;
+
+
+
+

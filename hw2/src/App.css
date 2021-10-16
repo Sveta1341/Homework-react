@@ -20,8 +20,8 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: 500px;
-	height: 435px;
+	width: 400px;
+	height: 400px;
 	background: #f1f1f1;
 	margin: 100px auto 0;
 	word-break: break-all;
@@ -29,6 +29,8 @@
 
 .bloc-tabs {
 	display: flex;
+	background-color: #914df7;
+	justify-content: center;
 }
 
 .tabs {
@@ -70,10 +72,8 @@ button {
 }
 
 .content {
-	background: white;
+	background: rgb(248, 246, 246);
 	padding: 20px;
-	width: 100%;
-	height: 100%;
 	display: none;
 }
 
@@ -91,5 +91,5 @@ button {
 
 span {
 	font-size: 18px;
-	color: #f8f5f5;
+	color: #fdfbff;
 }
