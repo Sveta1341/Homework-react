@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "name": "Светлана Божко",
+      "phone": "0668222791",
+      "location": "Ukraine",
+      "id": 1
+    },
+    {
+      "name": "Kate",
+      "phone": "0374567289",
+      "location": "Australia",
+      "id": 2
+    },
+    {
+      "name": "Jake",
+      "phone": "0895190739",
+      "location": "UK",
+      "id": 3
+    },
+    {
+      "name": "Константин",
+      "phone": "0503841291",
+      "location": "Россия",
+      "id": 4
+    }
+  ]
+}
